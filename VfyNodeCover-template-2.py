@@ -1,3 +1,9 @@
+'''
+On our honor, as SFSU students, we, Roan, Oscar, Phillip, Ryan, did not give or receive inappropriate 
+help with this assignment. All group members contributed to this work, and all concur with the submission.
+ We understand that we will be asked to redo the assignment in person if this work presents any question of 
+ an honor code violation.
+'''
 from graph import Graph
 
 '''An instance of NodeCover has the syntax: I = G;N
@@ -35,7 +41,7 @@ def vfyNodeCover(I,S,H):
     S_len = len(S)
     H_len = len(H)
     ### L0311 -- replace "False" with a reasonable length test
-    if H_len > len(I) or S_len > len(I):
+    if H_len > len(I) or S_len > 3:
         s = f'Solution length {S_len} or hint length {H_len} '
         printV(f'{s} is unreasonable')
         return 'unsure'
