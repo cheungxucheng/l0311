@@ -56,7 +56,7 @@ def vfyNodeCover(I,S,H):
     ###     f'{n} nodes in Hint but {N} is the maximum allowed'
     ### where "n" is the number of nodes in the hint
 
-    if False:
+    if len(node_cover) > N:
         printV(f'{len(node_cover)} nodes in Hint but {N} is the maximum allowed')
         return 'unsure'
         
@@ -70,8 +70,11 @@ def vfyNodeCover(I,S,H):
     ###  where "node" is in the hint but not the graph.
     ###
     
-    pass #replace this with required code
-    
+    for node in node_cover:
+        if node not in nodes:
+            printV(f'{node} in hint but not in graph')
+            return 'unsure'
+
     edges = G.split()
     
     ### L0311 -- add code to  verify that one or both of the endpoints
@@ -81,8 +84,12 @@ def vfyNodeCover(I,S,H):
     ### where "ends" is a list or tuple of an edges's end points
     ###
     
-    pass #replace this with required code
-    
+    for edge in edges:
+        ends = edge.split(',')
+        if ends[0] not in node_cover and ends[1] not in node_cover:
+            printV(f'Edge "{ends[0]}——{ends[1]}" not covered')
+            return 'unsure'
+        
     printV(f'"{I}" is a positive instance, all verifications succeeded')
     return 'correct' 
 
