@@ -48,7 +48,7 @@ def vfyNodeCover(I,S,H):
     
     ### L0311 -- replace "False" with a test to ensure that the caller
     ### is attempting to verify a positive instance.
-    if S == 'no':
+    if S != 'yes':
         printV(f'The solution "{S}" is not verifying a positive instance')
         return 'unsure'
 
